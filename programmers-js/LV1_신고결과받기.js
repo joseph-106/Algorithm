@@ -39,7 +39,7 @@ function solution(id_list, report, k) {
   // 메일을 보낼 id를 담는 배열
   const sendMailId = [];
 
-  // 이중 반복문으로 메일을 받을 id sendMail에 추가
+  // 이중 반복문으로 메일을 보낼 id를 sendMailId에 추가
   for (var i = 0; i < stoppedId.length; i++) {
     for (var j = 0; j < newReportList.length; j++) {
       if (newReportList[j][1] == stoppedId[i]) {
@@ -51,7 +51,7 @@ function solution(id_list, report, k) {
   // 정답을 담을 배열
   var answer = [];
 
-  // id_list의 순서대로 메일을 보낼 id를 대조해 answer에 추가
+  // id_list의 순서대로 sendMailId와 대조해 횟수를 answer에 추가
   for (var i = 0; i < id_list.length; i++) {
     var count = 0;
     for (var j = 0; j < sendMailId.length; j++) {
