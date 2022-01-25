@@ -1,3 +1,5 @@
+// 2020 KAKAO BLIND RECRUITMENT
+
 function solution(id_list, report, k) {
   // report 배열 중복값 제거
   const newReport = [...new Set(report)];
