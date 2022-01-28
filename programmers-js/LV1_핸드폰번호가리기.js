@@ -8,4 +8,7 @@ function solution(phone_number) {
   var answer =
     "*".repeat(array.length - 4) + array.splice(array.length - 4, 4).join("");
   return answer;
+  
+  // 배열 안쓰고 풀기
+  // var answer = "*".repeat(phone_number.length - 4) + phone_number.slice(-4);
 }
