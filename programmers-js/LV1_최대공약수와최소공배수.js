@@ -8,3 +8,10 @@ function solution(n, m) {
     }
   }
 }
+
+// 유클리드 호제법 ~ 최대공약수
+// function gcd(n, m) {
+//   const large = n > m ? n : m;
+//   const small = n > m ? m : n;
+//   return large % small == 0 ? small : gcd(small, large % small);
+// }
