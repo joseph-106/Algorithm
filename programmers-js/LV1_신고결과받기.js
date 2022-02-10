@@ -16,7 +16,7 @@ function solution(id_list, report, k) {
   const reportedId = [];
 
   // 2차원 배열에서 신고받은 id 추출해서 reportedId에 추가
-  for (var i = 0; i < newReportList.length; i++) {
+  for (let i = 0; i < newReportList.length; i++) {
     reportedId.push(newReportList[i][1]);
   }
 
@@ -32,7 +32,7 @@ function solution(id_list, report, k) {
   const stoppedId = [];
 
   // k번 이상 신고당한 id를 stoppedId에 추가
-  for (var i in reportedIdCount) {
+  for (let i in reportedIdCount) {
     if (reportedIdCount[i] >= k) {
       stoppedId.push(i);
     }
@@ -42,8 +42,8 @@ function solution(id_list, report, k) {
   const sendMailId = [];
 
   // 이중 반복문으로 메일을 보낼 id를 sendMailId에 추가
-  for (var i = 0; i < stoppedId.length; i++) {
-    for (var j = 0; j < newReportList.length; j++) {
+  for (let i = 0; i < stoppedId.length; i++) {
+    for (let j = 0; j < newReportList.length; j++) {
       if (newReportList[j][1] == stoppedId[i]) {
         sendMailId.push(newReportList[j][0]);
       }
@@ -51,12 +51,12 @@ function solution(id_list, report, k) {
   }
 
   // 정답을 담을 배열
-  var answer = [];
+  const answer = [];
 
   // id_list의 순서대로 sendMailId와 대조해 횟수를 answer에 추가
-  for (var i = 0; i < id_list.length; i++) {
-    var count = 0;
-    for (var j = 0; j < sendMailId.length; j++) {
+  for (let i = 0; i < id_list.length; i++) {
+    let count = 0;
+    for (let j = 0; j < sendMailId.length; j++) {
       if (id_list[i] == sendMailId[j]) {
         count++;
       }

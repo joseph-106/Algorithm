@@ -5,11 +5,11 @@ function solution(lottos, win_nums) {
   const newLottos = lottos.filter((num) => num !== 0);
 
   // 일치하는 최소 개수를 담는 변수
-  var minimum = 0;
+  let minimum = 0;
 
   // 이중 반복문으로 일치하는 최소 개수 구하기
-  for (var i = 0; i < newLottos.length; i++) {
-    for (var j = 0; j < win_nums.length; j++) {
+  for (let i = 0; i < newLottos.length; i++) {
+    for (let j = 0; j < win_nums.length; j++) {
       if (newLottos[i] == win_nums[j]) {
         minimum++;
       }
@@ -17,7 +17,7 @@ function solution(lottos, win_nums) {
   }
 
   // 일치하는 최대 개수 (최소 개수 + 0의 개수)
-  var maximum = minimum + 6 - newLottos.length;
+  let maximum = minimum + 6 - newLottos.length;
 
   // 0개 일치하는 경우 예외처리
   if (minimum == 0) {
@@ -28,6 +28,6 @@ function solution(lottos, win_nums) {
   }
 
   // 최고 순위와 최저 순위
-  var answer = [7 - maximum, 7 - minimum];
+  const answer = [7 - maximum, 7 - minimum];
   return answer;
 }
