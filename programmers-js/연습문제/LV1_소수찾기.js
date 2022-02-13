@@ -3,7 +3,7 @@
 // 1트) 효율성 테스트 실패
 // 2 이상의 자연수가 소수인지 판별하는 함수
 function prime(x) {
-  // 2부터 n-1 중에 나누어 떨어진다면 false
+  // 2부터 x-1 중에 나누어 떨어진다면 false
   for (let i = 2; i < x; i++) {
     if ((x / i) % 1 === 0) {
       return false;
@@ -37,6 +37,6 @@ function solution(n) {
       }
     }
   }
-  // filter를 활용해 특정 값 개수 구하기
+  // filter로 배열에서 특정 값 개수 구하기
   return arr.filter((e) => e === true).length;
 }
