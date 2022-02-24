@@ -8,12 +8,12 @@ function solution(n, arr1, arr2) {
   for (let i = 0; i < n; i++) {
     // 부족한 자릿수만큼 0 채우기
     arr1[i] =
-      arr1[i].length !== n ? "0".repeat(n - arr1[i].length) + arr1[i] : arr1[i];
+      arr1[i].length < n ? "0".repeat(n - arr1[i].length) + arr1[i] : arr1[i];
     arr2[i] =
-      arr2[i].length !== n ? "0".repeat(n - arr2[i].length) + arr2[i] : arr2[i];
+      arr2[i].length < n ? "0".repeat(n - arr2[i].length) + arr2[i] : arr2[i];
     let temp = "";
     for (let j = 0; j < n; j++) {
-      temp += arr1[i][j] == 0 && arr2[i][j] == 0 ? " " : "#";
+      temp += (arr1[i][j] == 0) & (arr2[i][j] == 0) ? " " : "#";
     }
     answer.push(temp);
   }
