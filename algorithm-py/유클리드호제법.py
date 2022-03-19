@@ -1,3 +1,4 @@
+# a >= b >= 0
 a, b = map(int, input().split());
 
 def Euclid(a, b):
