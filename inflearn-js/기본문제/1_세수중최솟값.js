@@ -1,12 +1,8 @@
 function solution(a, b, c) {
-  let answer = a;
-  if (answer >= b) {
-    answer = b;
-  }
-  if (answer >= c) {
-    answer = c;
-  }
-  return answer;
+  let max = a;
+  max = b > max ? b : max;
+  max = c > max ? c : max;
+  return max;
 }
 
 console.log(solution(2, 5, 1));
