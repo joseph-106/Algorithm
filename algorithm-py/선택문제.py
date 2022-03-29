@@ -32,6 +32,5 @@ list = [12, 3, 5, 7, 4, 19, 26, 23, 15]
 print("입력 리스트 =", list)
 print("[정렬] 3번째 작은 수: ", kth_smallest_sort(list, 3))
 print("[정렬] 6번째 작은 수: ", kth_smallest_sort(list, 6))
-n = len(list)
-print("[선택문제] 3번째 작은 수: ", quick_select(list, 0, n-1, 3))
-print("[선택문제] 6번째 작은 수: ", quick_select(list, 0, n-1, 6))
+print("[선택문제] 3번째 작은 수: ", quick_select(list, 0, len(list)-1, 3))
+print("[선택문제] 6번째 작은 수: ", quick_select(list, 0, len(list)-1, 6))
