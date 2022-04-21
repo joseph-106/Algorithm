@@ -5,8 +5,10 @@ function solution(n, arr) {
       .split("")
       .map(Number)
       .reduce((acc, cur) => acc + cur, 0);
-    if ((sum >= max[0]) & (arr[i] > max[1])) {
+    if (sum > max[0]) {
       max[0] = sum;
+      max[1] = arr[i];
+    } else if ((sum === max[0]) & (arr[i] > max[1])) {
       max[1] = arr[i];
     }
   }
