@@ -1,19 +1,9 @@
 function solution(need, plan) {
-  const needArr = need.split("");
-  const planArr = plan.split("");
-  const num = needArr.length;
-  let count = 0;
-  for (let i = 0; i < num; i++) {
-    const needTemp = needArr.shift();
-    while (planArr.length !== 0) {
-      const planTemp = planArr.shift();
-      if (needTemp === planTemp) {
-        count++;
-        break;
-      }
-    }
-  }
-  return count === num ? "YES" : "NO";
+  let temp = "";
+  plan.split("").forEach((e) => {
+    if (need.includes(e)) temp += e;
+  });
+  return temp === need ? "YES" : "NO";
 }
 
 let a = "CBA";

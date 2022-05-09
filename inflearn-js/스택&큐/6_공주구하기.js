@@ -4,7 +4,7 @@ function solution(n, k) {
     princeArr.push(i);
   }
   let count = 0;
-  while (true) {
+  while (princeArr.length !== 1) {
     for (let i = 0; i < princeArr.length; i++) {
       count++;
       if (count === k) {
@@ -12,9 +12,9 @@ function solution(n, k) {
         i--;
         count = 0;
       }
-      if (princeArr.length === 1) return princeArr.pop();
     }
   }
+  return princeArr.pop();
 }
 
 console.log(solution(8, 3));
