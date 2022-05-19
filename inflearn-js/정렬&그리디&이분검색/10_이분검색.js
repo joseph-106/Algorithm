@@ -3,15 +3,10 @@ function solution(target, arr) {
   arr.sort((a, b) => a - b);
   const search = (start, end) => {
     const mid = Math.floor((start + end) / 2);
-    if (arr[mid] === target) {
-      return mid;
-    } else if (arr[mid] > target) {
-      return search(start, mid - 1);
-    } else if (arr[mid] < target) {
-      return search(mid + 1, end);
-    }
+    if (arr[mid] === target) return mid + 1;
+    return arr[mid] > target ? search(start, mid - 1) : search(mid + 1, end);
   };
-  return search(1, arr.length);
+  return search(0, arr.length - 1);
 }
 
 /* function solution(target, arr) {
