@@ -7,7 +7,7 @@ function solution(board) {
     for (let i = 0; i < 4; i++) {
       const nx = x + dx[i];
       const ny = y + dy[i];
-      if (board[nx][ny] === 0 && nx >= 0 && nx <= 6 && ny >= 0 && ny <= 6) {
+      if (nx >= 0 && nx <= 6 && ny >= 0 && ny <= 6 && board[nx][ny] === 0) {
         board[x][y] = 1;
         recursive(nx, ny);
         board[x][y] = 0;
