@@ -1,4 +1,4 @@
-// BFS(넓이 우선 탐색)
+// BFS
 function solution() {
   let result = "";
   const queue = [];
