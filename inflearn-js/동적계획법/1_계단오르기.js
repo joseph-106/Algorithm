@@ -1,14 +1,14 @@
 function solution(n) {
-  const tempArr = [];
+  let count = 0;
   const recursive = (temp) => {
-    if (temp === n) tempArr.push(temp);
+    if (temp === n) count++;
     if (temp < n) {
       recursive(temp + 1);
       recursive(temp + 2);
     }
   };
   recursive(0);
-  return tempArr.length;
+  return count;
 }
 
 console.log(solution(7));
