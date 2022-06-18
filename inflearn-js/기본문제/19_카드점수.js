@@ -1,5 +1,5 @@
 function solution(nums, k) {
-  let max = Number.MIN_VALUE;
+  let max = Number.MIN_SAFE_INTEGER;
   const recursive = (left, right, sum) => {
     if (left + right < k) {
       recursive(left + 1, right, sum + nums[left]);
