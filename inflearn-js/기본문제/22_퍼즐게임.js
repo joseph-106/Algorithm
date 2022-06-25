@@ -1,4 +1,20 @@
-// 시간 초과
+function solution(nums) {
+  let dy = Array.from(Array(nums.length), () => Array(nums.length).fill(0));
+  for (let j = 2; j < nums.length; j++) {
+    for (let i = 0; i < nums.length - j; i++) {
+      dy[i][i + j] = Number.MAX_SAFE_INTEGER;
+      for (let k = i + 1; k < i + j; k++) {
+        dy[i][i + j] = Math.min(
+          dy[i][i + j],
+          dy[i][k] + dy[k][i + j] + nums[i] * nums[k] * nums[i + j]
+        );
+      }
+    }
+  }
+  return dy[0][nums.length - 1];
+}
+
+/* 시간 초과
 function solution(nums) {
   let min = Number.MAX_SAFE_INTEGER;
   const recursive = (point, tempArr) => {
@@ -13,7 +29,7 @@ function solution(nums) {
   };
   recursive(0, nums);
   return min;
-}
+} */
 
 console.log(solution([10, 1, 50, 50, 20, 5])); //3650
 console.log(
